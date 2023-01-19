@@ -21,3 +21,15 @@ app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+
+//MONGOOSE SETUP
+
+const PORT = process.env.PORT || 8080
+const URL = process.env.MONGO_URL
+
+mongoose.connect(URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => {
+    app.listen(PORT, () => console.log(`Server port: ${PORT}`));
+} ).catch((error) => console.log(error));

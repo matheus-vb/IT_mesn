@@ -43,7 +43,6 @@ const upload = multer({ storage });
 
 app.use("/auth", authRoutes);
 
-
 //MONGOOSE SETUP
 
 const PORT = process.env.PORT || 8080

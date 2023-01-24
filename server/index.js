@@ -9,6 +9,7 @@ import morgan from "morgan";
 import path from "path";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
+import postRoutes from "./routes/posts.js";
 import { fileURLToPath } from "url";
 
 //CONFIGURATION
@@ -44,6 +45,7 @@ const upload = multer({ storage });
 
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
+app.use("/posts", postRoutes);
 
 //MONGOOSE SETUP
 
